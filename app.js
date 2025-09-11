@@ -81,6 +81,7 @@ app.use(
 
 /** API route enable cors with options */
 app.use(basepath, cors(corsOptions), routes.auth);
+app.use(basepath, cors(corsOptions), routes.list);
 
 /**
  * Switch environment
