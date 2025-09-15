@@ -1,7 +1,6 @@
 import 'dotenv/config';
 import { validationResult } from 'express-validator';
 import seqQuery from '../libs/raw-query.lib.js';
-import models from '../models/models.js';
 import logger from '../libs/winston-logger.lib.js';
 
 /**

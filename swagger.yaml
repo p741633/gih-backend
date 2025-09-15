@@ -33,8 +33,10 @@ paths:
               properties:
                 username:
                   type: string
+                  example: Administrator
                 password:
                   type: string
+                  example: Test@123
                 remember:
                   type: boolean
                   value: false
@@ -82,7 +84,7 @@ paths:
         '200':
           description: A JSON array
 
-  /api/is-superUser-admin':
+  /api/is-superUser-admin:
     get:
       tags:
         - Authentication
@@ -222,6 +224,39 @@ paths:
           example: 'ALBENDAZOLE'
           allowEmptyValue: true
       summary: Get list of products.
+      responses:
+        '200':
+          description: A JSON array
+
+  /api/users-view:
+    get:
+      tags:
+        - Admin
+      parameters:
+        - in: query
+          name: q
+          schema:
+            type: string
+          allowEmptyValue: true
+        - in: query
+          name: page
+          schema:
+            type: integer
+          required: true
+          example: 1
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          required: true
+          example: 10
+        - in: query
+          name: role
+          schema:
+            type: string
+          example: 9
+          allowEmptyValue: true
+      summary: Get list of users.
       responses:
         '200':
           description: A JSON array

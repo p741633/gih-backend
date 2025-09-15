@@ -17,7 +17,7 @@ const Role = sequelize.define(
     },
   },
   {
-    tableName: 'roles',
+    tableName: 'gih_roles',
     timestamps: false,
   },
 );
